@@ -31,7 +31,7 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 
 # Enable full keyboard access for all controls
 # (e.g. enable Tab in modal dialogs)
-defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+# defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
 
 # Use scroll gesture with the Ctrl (^) modifier key to zoom
 defaults write com.apple.universalaccess closeViewScrollWheelToggle -bool true
@@ -57,7 +57,7 @@ sudo pmset -a autorestart 1
 sudo systemsetup -setrestartfreeze on
 
 # Sleep the display after 15 minutes
-sudo pmset -a displaysleep 15
+sudo pmset -a displaysleep 1
 
 # Require password immediately after sleep or screen saver begins
 defaults write com.apple.screensaver askForPassword -int 1
@@ -83,6 +83,21 @@ defaults write com.apple.finder ShowPathbar -bool true
 
 # Keep folders on top when sorting by name
 defaults write com.apple.finder _FXSortFoldersFirst -bool true
+
+
+defaults write com.apple.dock "autohide" -bool "true"
+defaults write com.apple.dock "show-recents" -bool "false"
+
+defaults write com.apple.dock "autohide-time-modifier" -float "0"
+defaults write com.apple.dock "autohide-delay" -float "0"
+defaults write com.apple.dock "mineffect" -string "scale"
+
+
+
+defaults write com.apple.appleseed.FeedbackAssistant "Autogather" -bool "false" 
+
+defaults write com.apple.TimeMachine "DoNotOfferNewDisksForBackup" -bool "false" 
+defaults write NSGlobalDomain "ApplePressAndHoldEnabled" -bool "false" 
 
 # When performing a search, search the current folder by default
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"
